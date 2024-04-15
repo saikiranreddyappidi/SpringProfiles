@@ -1,2 +1,12 @@
-package com.example.profiles.controller;public class directController {
+package com.example.profiles.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class DirectController {
+    @RequestMapping("/home")
+    public String home() {
+        return "home";
+    }
 }
