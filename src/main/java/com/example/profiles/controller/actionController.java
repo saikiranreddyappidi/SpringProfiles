@@ -1,26 +1,33 @@
 package com.example.profiles.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.example.profiles.models.User;
 import com.example.profiles.service.UserService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/users")
 public class actionController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping
-    public User addUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    @PostMapping("/add")
+    public String addUser(User user, RedirectAttributes redirectAttributes) {
+        userService.saveUser(user);
+        redirectAttributes.addFlashAttribute("message", "User added successfully!");
+        return "redirect:/users";  // Redirect to the users listing
     }
 
     @GetMapping
-    public List<User> getUsers() {
-        return userService.getAllUsers();
+    public String getUsers(Model model) {
+        List<User> users = userService.getAllUsers();
+        model.addAttribute("users", users);
+        return "users";
     }
 }
