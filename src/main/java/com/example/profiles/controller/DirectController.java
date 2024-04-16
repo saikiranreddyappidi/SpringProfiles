@@ -23,5 +23,9 @@ public class DirectController {
     public String newUser(){
         return "newUser";
     }
+    @GetMapping("/error")
+    public String error(){
+        return "error";
+    }
 
 }
