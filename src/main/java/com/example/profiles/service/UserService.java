@@ -5,6 +5,7 @@ import com.example.profiles.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserService {
@@ -28,6 +29,12 @@ public class UserService {
     }
 
     public User updateUser(User user) {
-        return userRepository.save(user); // save method can also be used to update
+        if (userRepository.findById(user.getId()).isPresent()){
+            String password = userRepository.findById(user.getId()).get().getPassword();
+            if (Objects.equals(user.getPassword(), password)){
+                return userRepository.save(user);
+            }
+        }
+        return null;
     }
 }
