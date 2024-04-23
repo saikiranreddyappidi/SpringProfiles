@@ -82,4 +82,16 @@ public class DirectController {
         }
         return "redirect:/users";
     }
+    @GetMapping("/admin/login")
+    public String admin(){
+        return "adminLogin";
+    }
+
+    @GetMapping("/admin/viewUsers")
+    public String viewUsers(Model model) {
+        List<User> users = userService.getAllUsers();
+        model.addAttribute("users", users);
+        return "viewUsers";
+    }
+
 }

@@ -9,6 +9,9 @@ import java.util.Objects;
 
 @Service
 public class UserService {
+    String admin = "admin";
+    String adminPassword = "admin";
+
     @Autowired
     private UserRepo userRepository;
 
@@ -36,5 +39,9 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    public boolean authenticate(String username, String password) {
+        return admin.equals(username) && adminPassword.equals(password);
     }
 }
