@@ -22,7 +22,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          MYSQL_DATABASE: mydatabase
+          MYSQL_DATABASE: spring
         ports:
           - 3306:3306
         options: >-
@@ -43,7 +43,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       env:
-        DB_URL: jdbc:mysql://localhost:3306/mydatabase
+        DB_URL: jdbc:mysql://localhost:3306/spring
         DB_USERNAME: ${{ secrets.DB_USERNAME }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         
