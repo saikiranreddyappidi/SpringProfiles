@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="${pageContext.request.contextPath}/global.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>home page</title>
 </head>

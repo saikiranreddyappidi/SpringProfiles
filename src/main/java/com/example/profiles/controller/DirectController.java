@@ -18,6 +18,10 @@ import java.util.Objects;
 public class DirectController {
     @Autowired
     UserService userService;
+    @RequestMapping("/")
+    public String index() {
+        return "index";
+    }
     @RequestMapping("/home")
     public String home() {
         return "home";
@@ -77,8 +81,11 @@ public class DirectController {
         if (user != null && Objects.equals(user.getPassword(), userForm.getPassword())) {
             userService.deleteUser(id);
             redirectAttributes.addFlashAttribute("message", "User deleted successfully!");
+        } else if (user != null) {
+            redirectAttributes.addFlashAttribute("message", "Password doesn't matched!");
+            return "redirect:/delete/"+id+"/";
         } else {
-            redirectAttributes.addFlashAttribute("error", "User not found!");
+            redirectAttributes.addFlashAttribute("message", "User not found!");
         }
         return "redirect:/users";
     }

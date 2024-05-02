@@ -10,6 +10,8 @@
 <html>
 <head>
     <title>Login</title>
+    <link href="${pageContext.request.contextPath}/global.css" rel="stylesheet">
+
 </head>
 <body>
 <h1>Login</h1>

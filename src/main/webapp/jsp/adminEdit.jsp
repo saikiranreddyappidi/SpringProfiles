@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
+    <link href="${pageContext.request.contextPath}/global.css" rel="stylesheet">
 </head>
 <body>
 <h4>STUDENT INFORMATION SYSTEM</h4>

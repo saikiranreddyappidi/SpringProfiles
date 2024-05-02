@@ -11,6 +11,8 @@
 <html>
 <head>
     <title>Users List</title>
+    <link href="${pageContext.request.contextPath}/global.css" rel="stylesheet">
+
 </head>
 <body>
 <h2>Users List</h2>

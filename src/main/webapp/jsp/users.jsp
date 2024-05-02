@@ -10,12 +10,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link href="${pageContext.request.contextPath}/global.css" rel="stylesheet">
     <title>Users List</title>
 </head>
 <body>
+<div class="header">
 <a href="${pageContext.request.contextPath}/admin/login">Admin</a>
-<h2>Users List</h2>
 <a href="/new">Add User</a>
+</div>
+<h2>Users List</h2>
+
 <c:if test="${empty users}">
     <p>No users found.</p>
 </c:if>
@@ -25,6 +29,7 @@
         <th>Email</th>
         <th>Bio</th>
         <th>Update</th>
+        <th>Delete</th>
     </tr>
     <c:forEach items="${users}" var="user">
         <tr>
@@ -36,6 +41,12 @@
         </tr>
     </c:forEach>
 </table>
+<c:if test="${not empty message}">
+    <div class="error" style="color: red">${message}</div>
+</c:if>
+<c:if test="${not empty error}">
+    <div class="error" style="color: red">${error}</div>
+</c:if>
 </body>
 </html>
 

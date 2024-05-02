@@ -1,0 +1,143 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: grid; /* Enables flexbox */
+    justify-content: space-around; /* Center horizontally */
+    align-items: baseline;
+    align-content: stretch;
+    justify-items: stretch; /* Center vertically */
+    background-color: #121212; /* Background color */
+    color: #fff; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+}
+
+.header {
+    background-color: #333; /* Dark grey */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: space-around; /* Center horizontally */
+    align-items: baseline;
+    align-content: stretch;
+    justify-items: stretch;
+    padding: 1rem; /* Padding around the header */
+    text-align: center; /* Center text */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+/*    add some space between elements*/
+    margin-top: 1rem;
+    padding: 1rem;
+
+}
+
+/* Headings styles */
+h1, h2, h3, h4, h5, h6 {
+    padding: 2%;
+    margin-bottom: 0.75rem;
+    color: #ff8c00; /* Soft orange for a bit of contrast */
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Link styles */
+a {
+    color: #008cff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Input field styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    background-color: #222;
+    color: #fff;
+}
+
+input[type="submit"],
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #555;
+}
+
+/* Utility classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Basic Styles */
+table {
+    width: 100%; /* Full-width */
+    border-collapse: collapse; /* No double borders */
+    margin-top: 20px; /* Add some space above the table */
+}
+
+/* Table Headers */
+th {
+    background-color: #333; /* Dark background for headers */
+    color: white; /* White text for contrast */
+    font-weight: bold; /* Make header text bold */
+    padding: 12px 15px; /* Padding inside header cells */
+    text-align: left; /* Align text to the left */
+}
+
+/* Table Cells */
+td {
+    background-color: #222; /* Slightly lighter background for cells */
+    color: #ddd; /* Light grey text color for readability */
+    padding: 10px 15px; /* Padding inside cells */
+    border-top: 1px solid #333; /* Add a top border for separation */
+}
+
+/* Hover Effect for Rows */
+tr:hover {
+    background-color: #444; /* Darker background on row hover */
+}
+
+/* Responsive Styling (Optional) */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center; /* Center text for smaller screens */
+    }
+}
